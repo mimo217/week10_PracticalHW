@@ -14,16 +14,16 @@ const items = [
 
 //GET /items
 app.get('/items', (req, res) => {
-  res.json(`retrieve items ${items}`);
+  res.json(items);
 });
 
 // POST /items
 app.post('/items', (req, res) => {
   const { name, price } = req.body;
   const id = (items.length + 1).toString();
-  const newItem = { id, name, price };
+  const newItem = { id: '5', name: 'highlighter', price : '$2.56'};
   items.push(newItem);
-  res.json(`add new item ${newItem}`);
+  res.json(newItem);
 });
 
 
