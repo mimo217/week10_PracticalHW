@@ -22,7 +22,7 @@ Please make sure the following softwares are installed on your computer:
 <li>GET /items: Returns a list of items</li>
 <li>POST /items: Adds a new item to the list</li>
 <li>GET /items/:id: Returns a item with a specific id</li>
-<li>PUT /items:/id: Updates the item with a specific id </li>
+<li>PUT /items/:id: Updates the item with a specific id </li>
 <li>DELETE /items/:id: Deletes the item with a specific id</li>
 </ul>
 
