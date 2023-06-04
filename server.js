@@ -6,10 +6,12 @@ const PORT = 3000
 app.use(bodyParser.json())
 
 const items = [
-  { id: '1', name: 'book', price: '$11.99' },
-  { id: '2', name: 'pen', price: '$2.12' },
-  { id: '3', name: 'eraser', price: '$ 1.00' },
-  { id: '4', name: 'sharpie', price: '$3.50' }
+  { name: 'book', price: '$11.99', id: '263' },
+  { name: 'pen', price: '$2.12', id: '379'},
+  { name: 'eraser', price: '$ 1.00', id: '178' },
+  { name: 'sharpie', price: '$3.50', id: '208' },
+  { name: 'computer', price: '$1100', id: '783' },
+  { name: 'ipad', price: '$509', id: '098' }
 ];
 
 //GET /items
@@ -21,7 +23,7 @@ app.get('/items', (req, res) => {
 app.post('/items', (req, res) => {
   const { name, price } = req.body;
   const id = (items.length + 1).toString();
-  const newItem = { id: '5', name: 'highlighter', price : '$2.56'};
+  const newItem = { name: 'highlighter', price : '$2.56', id: '458'};
   items.push(newItem);
   res.send(newItem);
 });
