@@ -14,7 +14,7 @@ const items = [
 
 //GET /items
 app.get('/items', (req, res) => {
-  res.json(items);
+  res.send(items);
 });
 
 // POST /items
@@ -23,7 +23,7 @@ app.post('/items', (req, res) => {
   const id = (items.length + 1).toString();
   const newItem = { id: '5', name: 'highlighter', price : '$2.56'};
   items.push(newItem);
-  res.json(newItem);
+  res.send(newItem);
 });
 
 
@@ -33,7 +33,7 @@ app.get('/items/:id', (req, res) => {
     const id = req.params.id;
     const item = items.find(item => item.id === id);
     if (item) {
-      res.json(item);
+      res.send(item);
     } else {
       throw new Error('Item is not here');
     }
@@ -50,7 +50,7 @@ app.put('/items/:id', (req, res) => {
   const itemIndex = items.findIndex(item => item.id === id);
   if (itemIndex !== -1) {
     items[itemIndex] = { id, name, price };
-    res.json(items[itemIndex]);
+    res.send(items[itemIndex]);
   } else {
     throw new Error('Item is not here');
   }
@@ -67,7 +67,7 @@ app.delete('/items/:id', (req, res) => {
   const itemIndex = items.findIndex(item => item.id === id);
   if (itemIndex !== -1) {
     const deletedItem = items.splice(itemIndex, 1)[0];
-    res.json(deletedItem);
+    res.send(deletedItem);
   } else {
     throw new Error('Item is not here');
   }
